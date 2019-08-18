@@ -44,7 +44,7 @@ class MusicLibraryController
     # Song.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
     #     puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
     #   end
-    binding.pry
+    #binding.pry
     Song.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
       puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
     end
@@ -100,7 +100,7 @@ class MusicLibraryController
     list_of_songs =  Song.all.sort{ |a, b| a.name <=> b.name }
     input = gets.strip.to_i
     if (1..Song.all.length).include?(input)
-      song = list_of_songs[input+2]
+      song = list_of_songs[input-1]
       puts "Playing #{song.name} by #{song.artist.name}"
     end
   end
